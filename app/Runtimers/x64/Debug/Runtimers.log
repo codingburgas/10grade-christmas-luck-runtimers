@@ -1,4 +1,6 @@
-﻿  main.cpp
+﻿  inventory.cpp
+  main.cpp
+  Generating Code...
   Runtimers.vcxproj -> C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\x64\Debug\Runtimers.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
