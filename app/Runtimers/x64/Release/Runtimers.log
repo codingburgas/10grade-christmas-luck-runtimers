@@ -1,9 +1,7 @@
 ﻿  inventory.cpp
   main.cpp
   Generating code
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  Previous IPDB not found, fall back to full compilation.
   All 140 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Runtimers.vcxproj -> C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\x64\Release\Runtimers.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+  Runtimers.vcxproj -> D:\10grade-christmas-luck-runtimers\app\x64\Release\Runtimers.exe
