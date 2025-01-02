@@ -1,6 +1,5 @@
 #include "inventory.h"
 
-
 void loadInventory(const string& fileName, vector<Chemical>& inventory) {
 	ifstream file(fileName);
 	if (!file) {
@@ -26,6 +25,7 @@ void saveInventory(const string& fileName, vector<Chemical>& inventory) {
 	}
 	file.close();
 }
+
 void displayInventory(vector<Chemical>& inventory) {
 	for (const auto& chem : inventory) {
 		cout << "Name: " << chem.name
@@ -36,3 +36,4 @@ void displayInventory(vector<Chemical>& inventory) {
 			<< endl;
 	}
 }
+
