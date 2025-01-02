@@ -1,4 +1,5 @@
 #include "startingScreen.h"
+#include "hallway.h"
 
 void displayStartingScreen()
 {
@@ -11,11 +12,11 @@ void displayStartingScreen()
 
     SetWindowIcon(logo);
 
-    Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 175, GetScreenHeight() / 2 + 425 };
-    Vector2 enterButtonPosition = { GetScreenWidth() / 2 - 175, GetScreenHeight() / 2 + 375 };
+    Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
+    Vector2 enterButtonPosition = { GetScreenWidth() / 2 - 160, GetScreenHeight() / 2 + 350 };
 
     const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
-    const Rectangle enterButton = { enterButtonPosition.x - 90, enterButtonPosition.y + 20, 200, 50 };
+    const Rectangle enterButton = { enterButtonPosition.x , enterButtonPosition.y , 250, 100 };
 
     Texture2D background = LoadTexture("../assets/startingScreen/startingScreen.png");
 
@@ -35,12 +36,12 @@ void displayStartingScreen()
 
         if (CheckCollisionPointRec(mousePosition, enterButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-           return;
+           displayHallway();
         }
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? RED : WHITE);
+        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {

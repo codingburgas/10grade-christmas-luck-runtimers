@@ -1,6 +1,5 @@
 #include "inventory.h"
 
-
 void loadInventory(const string& fileName, vector<Chemical>& inventory) {
 	ifstream file(fileName);
 	if (!file) {
