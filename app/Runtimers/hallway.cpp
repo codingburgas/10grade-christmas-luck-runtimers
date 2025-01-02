@@ -1,4 +1,5 @@
 #include "hallway.h"
+#include "inventory.h"
 
 void displayHallway()
 {
@@ -41,7 +42,7 @@ void displayHallway()
 
         if (CheckCollisionPointRec(mousePosition, labButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            return;
+            displayInventory();
         }
 
         DrawText("ARCH", archiveButtonPosition.x + 100, archiveButtonPosition.y + 25, 50, isMouseOverArchiveButton ? BLACK : WHITE);
