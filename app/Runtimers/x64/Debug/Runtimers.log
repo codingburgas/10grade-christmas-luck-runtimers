@@ -1,4 +1,14 @@
-﻿  main.cpp
-  Runtimers.vcxproj -> C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\x64\Debug\Runtimers.exe
+﻿  startingScreen.cpp
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(14,57): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(14,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(14,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(14,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(43,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(43,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Runtimers.vcxproj -> C:\Users\Jujka\Desktop\10grade-christmas-luck-runtimers\app\x64\Debug\Runtimers.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
