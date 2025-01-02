@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\",
+  "WorkspaceRootPath": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\startingScreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\startingScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\inventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,13 +38,65 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "startingScreen.h",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.h",
+              "RelativeDocumentMoniker": "Runtimers\\startingScreen.h",
+              "ToolTip": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.h",
+              "RelativeToolTip": "Runtimers\\startingScreen.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-02T13:17:48.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "startingScreen.cpp",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.cpp",
+              "RelativeDocumentMoniker": "Runtimers\\startingScreen.cpp",
+              "ToolTip": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\startingScreen.cpp",
+              "RelativeToolTip": "Runtimers\\startingScreen.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-02T13:17:18.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "inventory.cpp",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp",
+              "RelativeDocumentMoniker": "Runtimers\\inventory.cpp",
+              "ToolTip": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp",
+              "RelativeToolTip": "Runtimers\\inventory.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-02T13:16:29.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "pch.h",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\pch.h",
+              "RelativeDocumentMoniker": "Runtimers\\pch.h",
+              "ToolTip": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\pch.h",
+              "RelativeToolTip": "Runtimers\\pch.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-02T13:15:30.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp",
               "RelativeDocumentMoniker": "Runtimers\\main.cpp",
-              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp",
+              "ToolTip": "C:\\Users\\Jujka\\Desktop\\10grade-christmas-luck-runtimers\\app\\Runtimers\\main.cpp",
               "RelativeToolTip": "Runtimers\\main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-29T15:58:00.56Z",
               "EditorCaption": ""
