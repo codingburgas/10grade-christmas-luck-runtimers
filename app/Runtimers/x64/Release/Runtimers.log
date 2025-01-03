@@ -18,21 +18,30 @@ C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimer
 C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\hallway.cpp(55,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\hallway.cpp(55,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   inventory.cpp
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(51,57): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(51,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(51,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(51,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(52,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(52,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(52,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(52,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(53,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(53,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(53,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(53,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(83,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(83,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(107,57): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(107,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(107,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(107,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(127,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\inventory.cpp(127,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   main.cpp
-  startingScreen.cpp
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,57): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,57): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,86): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(15,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(16,58): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(16,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(16,87): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(16,87): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(44,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\Runtimers\startingScreen.cpp(44,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating code
-  218 of 227 functions (96.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
+  4 of 229 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Runtimers.vcxproj -> C:\Users\Jujka\Documents\Runtimers\10grade-christmas-luck-runtimers\app\x64\Release\Runtimers.exe
