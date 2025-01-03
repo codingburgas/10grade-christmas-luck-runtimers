@@ -14,5 +14,10 @@ struct Chemical
 };
 void loadInventory(const string& fileName, vector<Chemical>& inventory);
 void saveInventory(const string& fileName, vector<Chemical>& inventory);
-void displayInventory(const vector<Chemical>& inventory);
+//void displayInventory(const vector<Chemical>& inventory);
+
+void displayInventory();
+void displayShelfInside();
+
+
 #endif
