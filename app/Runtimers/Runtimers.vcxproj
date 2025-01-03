@@ -141,11 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="hallway.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="startingScreen.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="hallway.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="startingScreen.cpp" />

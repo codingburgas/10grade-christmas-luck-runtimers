@@ -1,4 +1,5 @@
 #include "startingScreen.h"
+#include "hallway.h"
 
 void displayStartingScreen()
 {
@@ -35,7 +36,7 @@ void displayStartingScreen()
 
         if (CheckCollisionPointRec(mousePosition, enterButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            ;
+            displayHallway();
         }
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
