@@ -143,10 +143,12 @@
   <ItemGroup>
     <ClInclude Include="inventory.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="startingScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="startingScreen.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
