@@ -18,6 +18,7 @@ void saveInventory(const string& fileName, vector<Chemical>& inventory);
 
 void displayInventory();
 void displayShelfInside();
+void displayChembenchZoomed();
 
 
 #endif

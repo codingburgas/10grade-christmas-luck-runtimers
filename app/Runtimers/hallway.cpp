@@ -7,7 +7,6 @@ void displayHallway()
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
-    InitWindow(screenWidth, screenHeight, "RUNTIMERS");
 
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
 
@@ -57,7 +56,7 @@ void displayHallway()
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            return;
+            break;
         }
 
         EndDrawing();

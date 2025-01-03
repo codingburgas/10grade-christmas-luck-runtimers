@@ -13,10 +13,10 @@ void displayStartingScreen()
     SetWindowIcon(logo);
 
     Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
-    Vector2 enterButtonPosition = { GetScreenWidth() / 2 - 160, GetScreenHeight() / 2 + 350 };
+    Vector2 enterButtonPosition = { GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 + 300 };
 
     const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
-    const Rectangle enterButton = { enterButtonPosition.x , enterButtonPosition.y , 250, 100 };
+    const Rectangle enterButton = { enterButtonPosition.x , enterButtonPosition.y , 400, 200 };
 
     Texture2D background = LoadTexture("../assets/startingScreen/startingScreen.png");
 
@@ -45,7 +45,7 @@ void displayStartingScreen()
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            return;
+            break;
         }
 
         EndDrawing();
