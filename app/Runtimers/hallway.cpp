@@ -4,9 +4,10 @@
 
 void displayHallway()
 {
+    Font font = LoadFont("../font/font.ttf");
+
     const int screenWidth = 1920;
     const int screenHeight = 1080;
-
 
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
 
@@ -38,21 +39,21 @@ void displayHallway()
         bool isMouseOverLabButton = CheckCollisionPointRec(mousePosition, labButton);
         bool isMouseOverArchiveButton = CheckCollisionPointRec(mousePosition, archiveButton);
 
-        DrawText("LAB", labButtonPosition.x + 100, labButtonPosition.y + 25, 50, isMouseOverLabButton ? BLACK : WHITE);
+        DrawTextEx(font, "INV", Vector2{ labButtonPosition.x + 102, labButtonPosition.y + 25 }, 50, 10, isMouseOverLabButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, labButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            displayInventory();
+            displayInventoryBg();
         }
 
-        DrawText("ARCH", archiveButtonPosition.x + 100, archiveButtonPosition.y + 25, 50, isMouseOverArchiveButton ? BLACK : WHITE);
+        DrawTextEx(font, "ARCH", Vector2{ archiveButtonPosition.x + 95, archiveButtonPosition.y + 25 }, 50, 10, isMouseOverArchiveButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, archiveButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
             displayArchive();
         }
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? BLACK : WHITE);
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -63,4 +64,6 @@ void displayHallway()
     }
 
     UnloadTexture(background);
+    UnloadFont(font);
+
 }

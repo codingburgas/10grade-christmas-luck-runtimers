@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\inventory.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\archive.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\archive.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\hallway.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\inventory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE1A9F9C-32F6-4B9B-A05E-834CF4EE9C3F}|Runtimers\\Runtimers.vcxproj|solutionrelative:Runtimers\\hallway.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +34,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "hallway.cpp",
-              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.cpp",
-              "RelativeDocumentMoniker": "Runtimers\\hallway.cpp",
-              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.cpp",
-              "RelativeToolTip": "Runtimers\\hallway.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADYAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "archive.cpp",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.cpp",
+              "RelativeDocumentMoniker": "Runtimers\\archive.cpp",
+              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.cpp",
+              "RelativeToolTip": "Runtimers\\archive.cpp",
+              "ViewState": "AQIAAFABAAAAAAAAAAAAAF0BAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-04T16:19:18.191Z",
+              "WhenOpened": "2025-01-05T11:55:36.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "inventory.cpp",
-              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp",
-              "RelativeDocumentMoniker": "Runtimers\\inventory.cpp",
-              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.cpp",
-              "RelativeToolTip": "Runtimers\\inventory.cpp",
-              "ViewState": "AQIAAJkAAAAAAAAAAAAcwKQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-03T15:11:06.534Z",
+              "DocumentIndex": 1,
+              "Title": "archive.h",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.h",
+              "RelativeDocumentMoniker": "Runtimers\\archive.h",
+              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\archive.h",
+              "RelativeToolTip": "Runtimers\\archive.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T11:55:34.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "inventory.h",
-              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.h",
-              "RelativeDocumentMoniker": "Runtimers\\inventory.h",
-              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\inventory.h",
-              "RelativeToolTip": "Runtimers\\inventory.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAeAAAA",
+              "Title": "hallway.cpp",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.cpp",
+              "RelativeDocumentMoniker": "Runtimers\\hallway.cpp",
+              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.cpp",
+              "RelativeToolTip": "Runtimers\\hallway.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-05T11:54:58.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "hallway.h",
+              "DocumentMoniker": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.h",
+              "RelativeDocumentMoniker": "Runtimers\\hallway.h",
+              "ToolTip": "C:\\Users\\Jujka\\Documents\\Runtimers\\10grade-christmas-luck-runtimers\\app\\Runtimers\\hallway.h",
+              "RelativeToolTip": "Runtimers\\hallway.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-03T15:11:05.035Z"
+              "WhenOpened": "2025-01-05T11:54:54.479Z",
+              "EditorCaption": ""
             }
           ]
         }

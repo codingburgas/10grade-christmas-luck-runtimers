@@ -8,6 +8,8 @@ void displayStartingScreen()
 
     InitWindow(screenWidth, screenHeight, "RUNTIMERS");
 
+    Font font = LoadFont("../font/font.ttf");
+
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
 
     SetWindowIcon(logo);
@@ -41,7 +43,7 @@ void displayStartingScreen()
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? BLACK : WHITE);
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -51,5 +53,6 @@ void displayStartingScreen()
         EndDrawing();
     }
 
+    UnloadFont(font);
     UnloadTexture(background);
 }

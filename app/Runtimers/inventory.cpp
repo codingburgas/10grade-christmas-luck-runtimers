@@ -1,47 +1,12 @@
 #include "inventory.h"
 
-void loadInventory(const string& fileName, vector<Chemical>& inventory) {
-    ifstream file(fileName);
-    if (!file) {
-        cerr << "Unable to open file for reading" << endl;
-    }
 
-    Chemical chem;
-
-    while (file >> chem.name >> chem.casNumber >> chem.chemicalFormula >> chem.expiryDate >> chem.hazardLevel >> chem.quantity) {
-        inventory.push_back(chem);
-    }
-    file.close();
-}
-
-void saveInventory(const string& fileName, vector<Chemical>& inventory) {
-    ofstream file(fileName);
-    if (!file) {
-        cerr << "Unable to open file for writing" << endl;
-    }
-
-    for (const auto& chem : inventory) {
-        file << chem.name << " " << chem.casNumber << " " << chem.chemicalFormula << " " << chem.expiryDate << " " << chem.hazardLevel << " " << chem.quantity << endl;
-    }
-    file.close();
-}
-
-//void displayInventory(vector<Chemical>& inventory) {
-    //for (const auto& chem : inventory) {
-        //cout << "Name: " << chem.name
-            //<< "casNumber: " << chem.casNumber
-            //<< "expiryDate: " << chem.expiryDate
-            //<< "hazardLevel: " << chem.hazardLevel
-            //<< "quantity: " << chem.quantity
-            //<< endl;
-    //}
-//}
-
-void displayInventory()
+void displayInventoryBg()
 {
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
+    Font font = LoadFont("../font/font.ttf");
 
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
 
@@ -86,7 +51,7 @@ void displayInventory()
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 55, 50, isMouseOverExitButton ? BLACK : WHITE);
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 55 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -97,12 +62,16 @@ void displayInventory()
     }
 
     UnloadTexture(background);
+    UnloadFont(font);
+
 }
 
 void displayChembenchZoomed()
 {
     const int screenWidth = 1920;
     const int screenHeight = 1080;
+
+    Font font = LoadFont("../font/font.ttf");
 
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
 
@@ -129,9 +98,9 @@ void displayChembenchZoomed()
 
 
     float x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7, x8, y8, x9, y9, x10, y10, x11, y11, x12, y12;
-    x1 = 690, y1 = - 170, x2 = 840, y2 = - 170, x3 = 870, y3 = - 430, x4 = 490, y4 = - 228;
-    x5 = 820, y5 = - 235, x6 = 730, y6 = - 230, x7 = 865, y7 = - 230, x8 = 280, y8 = 62;
-    x9 = 610, y9 = - 10, x10 = 765, y10 = 135, x11 = 680, y11 = 383, x12 = 740, y12 = 210;
+    x1 = 690, y1 = -170, x2 = 840, y2 = -170, x3 = 870, y3 = -430, x4 = 490, y4 = -228;
+    x5 = 820, y5 = -235, x6 = 730, y6 = -230, x7 = 865, y7 = -230, x8 = 280, y8 = 62;
+    x9 = 610, y9 = -10, x10 = 765, y10 = 135, x11 = 680, y11 = 383, x12 = 740, y12 = 210;
 
     SetTargetFPS(60);
 
@@ -161,7 +130,7 @@ void displayChembenchZoomed()
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? BLACK : WHITE);
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -172,6 +141,8 @@ void displayChembenchZoomed()
     }
 
     UnloadTexture(background);
+    UnloadFont(font);
+
     UnloadTexture(H2O);
     UnloadTexture(HCl);
     UnloadTexture(HNO3);
@@ -190,6 +161,8 @@ void displayShelfInside()
 {
     const int screenWidth = 1920;
     const int screenHeight = 1080;
+
+    Font font = LoadFont("../font/font.ttf");
 
     Image logo = LoadImage("../assets/logo/logoTransparent.png");
     SetWindowIcon(logo);
@@ -286,7 +259,7 @@ void displayShelfInside()
 
         bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
-        DrawText("Exit", exitButtonPosition.x + 100, exitButtonPosition.y + 25, 50, isMouseOverExitButton ? BLACK : WHITE);
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
@@ -297,9 +270,10 @@ void displayShelfInside()
     }
 
     UnloadTexture(background);
+    UnloadFont(font);
+
     for (int i = 0; i < 12; i++)
     {
         UnloadTexture(reagents[i]);
     }
 }
-

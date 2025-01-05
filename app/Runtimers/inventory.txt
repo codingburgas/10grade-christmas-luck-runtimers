@@ -1,0 +1,6 @@
+Sodium,       Na, 0
+Calcium,       Ca, 0
+Chlorine,       Cl2, 0
+Oxygen,       O2, 0
+Nitrogen,       N2, 0
+Hydrogen,       H2, 0
