@@ -1,18 +1,17 @@
 #include "pch.h"
+#include "archive.h"
 
-#ifndef INVENTORY_H
-#define INVENTORY_H
+#pragma once
 
-struct Chemical
-{
-	string name;
-	string casNumber;
-	string chemicalFormula;
-	int quantity;
-	string expiryDate;
-	int hazardLevel; // 1 -> ниско , 5 -> високо
+// Structure to represent an inventory element
+struct inventoryElement {
+    string formula;
+    Texture2D texture;
+    Rectangle sourceRect;
+    Vector2 position;
 };
-void loadInventory(const string& fileName, vector<Chemical>& inventory);
-void saveInventory(const string& fileName, vector<Chemical>& inventory);
-void displayInventory(const vector<Chemical>& inventory);
-#endif
+
+// Function declarations
+void displayInventoryBg();
+void displayShelfInside();
+void displayChembenchZoomed();

@@ -1,18 +1,11 @@
-#include "raylib.h"
+#include "pch.h"
+#include "startingScreen.h"
 
-int main(void)
+int main() 
 {
-    InitWindow(800, 450, "raylib [core] example - basic window");
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-        EndDrawing();
-    }
+	vector<Chemical> inventory = LoadInventoryFromFile("inventory.txt"); // Load inventory from file
 
-    CloseWindow();
+	displayStartingScreen(); // Display the starting screen
 
-    return 0;
 }
