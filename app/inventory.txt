@@ -1,0 +1,12 @@
+Water,     H2O, 11
+Hydrogen,     H2, 1
+Calcium Hydroxide,     Ca(OH)2, 10
+Calcium,     Ca, 10
+Chlorine,     Cl2, 10
+Oxygen,     O2, 1
+Sodium Hydroxide,     NaOH, 10
+Sodium Chloride,     NaCl, 10
+Sodium,     Na, 10
+Nitric Acid,     HNO3, 10
+Nitrogen,     N2, 10
+Hydrochloric Acid,     HCl, 10

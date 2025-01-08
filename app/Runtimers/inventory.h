@@ -1,10 +1,16 @@
 #include "pch.h"
+#include "archive.h"
 
-#ifndef INVENTORY_H
-#define INVENTORY_H
+#pragma once
+
+struct inventoryElement {
+    string formula;
+    Texture2D texture;
+    Rectangle sourceRect;
+    Vector2 position;
+};
+
 
 void displayInventoryBg();
 void displayShelfInside();
 void displayChembenchZoomed();
-
-#endif

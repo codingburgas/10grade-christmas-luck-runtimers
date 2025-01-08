@@ -1,6 +1,4 @@
 #include "hallway.h"
-#include "inventory.h"
-#include "archive.h"
 
 void displayHallway()
 {
@@ -9,17 +7,13 @@ void displayHallway()
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
-    Image logo = LoadImage("../assets/logo/logoTransparent.png");
-
-    SetWindowIcon(logo);
-
     Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
     Vector2 labButtonPosition = { GetScreenWidth() / 2 - 295, GetScreenHeight() / 2 - 135 };
     Vector2 archiveButtonPosition = { GetScreenWidth() / 2 + 260, GetScreenHeight() / 2 - 135 };
 
     const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
-    const Rectangle labButton = { labButtonPosition.x - 50, labButtonPosition.y, 250, 100 };
-    const Rectangle archiveButton = { archiveButtonPosition.x + 50, archiveButtonPosition.y, 250, 100 };
+    const Rectangle labButton = { labButtonPosition.x , labButtonPosition.y, 220, 100 };
+    const Rectangle archiveButton = { archiveButtonPosition.x , archiveButtonPosition.y, 220, 100 };
 
     Texture2D background = LoadTexture("../assets/hallway/hallway.png");
 

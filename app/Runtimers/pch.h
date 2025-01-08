@@ -7,5 +7,7 @@
 #include <sstream>
 #include <random>
 #include "raylib.h"
+#include <algorithm>
+#include <cctype>
 
 using namespace std;

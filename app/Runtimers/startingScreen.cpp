@@ -1,5 +1,5 @@
 #include "startingScreen.h"
-#include "hallway.h"
+
 
 void displayStartingScreen()
 {
@@ -55,4 +55,10 @@ void displayStartingScreen()
 
     UnloadFont(font);
     UnloadTexture(background);
+    CloseWindow();
 }
+
+//void getAllQuantities()
+//{
+//
+//}
