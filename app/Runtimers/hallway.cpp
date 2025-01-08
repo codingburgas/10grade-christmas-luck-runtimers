@@ -2,62 +2,67 @@
 
 void displayHallway()
 {
-    Font font = LoadFont("../font/font.ttf");
+    Font font = LoadFont("../font/font.ttf"); // Load font
 
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
-    Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
-    Vector2 labButtonPosition = { GetScreenWidth() / 2 - 295, GetScreenHeight() / 2 - 135 };
-    Vector2 archiveButtonPosition = { GetScreenWidth() / 2 + 260, GetScreenHeight() / 2 - 135 };
+    // Position for the buttons
+    Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 }; 
+    Vector2 labButtonPosition = { GetScreenWidth() / 2 - 295, GetScreenHeight() / 2 - 135 }; 
+    Vector2 archiveButtonPosition = { GetScreenWidth() / 2 + 260, GetScreenHeight() / 2 - 135 }; 
 
-    const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
+    // Define the button's rectangles
+    const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 }; 
     const Rectangle labButton = { labButtonPosition.x , labButtonPosition.y, 220, 100 };
-    const Rectangle archiveButton = { archiveButtonPosition.x , archiveButtonPosition.y, 220, 100 };
+    const Rectangle archiveButton = { archiveButtonPosition.x , archiveButtonPosition.y, 220, 100 }; 
 
-    Texture2D background = LoadTexture("../assets/hallway/hallway.png");
+    Texture2D background = LoadTexture("../assets/hallway/hallway.png"); // Load background texture
 
-    SetTargetFPS(60);
+    SetTargetFPS(60); 
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose()) 
     {
-        Vector2 mousePosition = GetMousePosition();
+        Vector2 mousePosition = GetMousePosition(); 
 
-        BeginDrawing();
+        BeginDrawing(); 
 
-        ClearBackground(RAYWHITE);
+        ClearBackground(RAYWHITE); 
 
-        DrawTexture(background, 0, 0, RAYWHITE);
+        DrawTexture(background, 0, 0, RAYWHITE); 
 
-        bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
+        // Check if the mouse is over the lab button
         bool isMouseOverLabButton = CheckCollisionPointRec(mousePosition, labButton);
-        bool isMouseOverArchiveButton = CheckCollisionPointRec(mousePosition, archiveButton);
-
-        DrawTextEx(font, "INV", Vector2{ labButtonPosition.x + 102, labButtonPosition.y + 25 }, 50, 10, isMouseOverLabButton ? BLACK : WHITE);
+        DrawTextEx(font, "INV", Vector2{ labButtonPosition.x + 102, labButtonPosition.y + 25 }, 50, 10, isMouseOverLabButton ? BLACK : WHITE); // Draw the lab button text
 
         if (CheckCollisionPointRec(mousePosition, labButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            displayInventoryBg();
+            displayInventoryBg(); 
         }
 
-        DrawTextEx(font, "ARCH", Vector2{ archiveButtonPosition.x + 95, archiveButtonPosition.y + 25 }, 50, 10, isMouseOverArchiveButton ? BLACK : WHITE);
+
+        // Check if the mouse is over the archive button
+        bool isMouseOverArchiveButton = CheckCollisionPointRec(mousePosition, archiveButton); 
+        DrawTextEx(font, "ARCH", Vector2{ archiveButtonPosition.x + 95, archiveButtonPosition.y + 25 }, 50, 10, isMouseOverArchiveButton ? BLACK : WHITE); // Draw the archive button text
 
         if (CheckCollisionPointRec(mousePosition, archiveButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            displayArchive();
+            displayArchive(); 
         }
 
-        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
+
+        // Check if the mouse is over the exit button
+        bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton); 
+        DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE); // Draw the exit button text
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
         {
-            break;
+            break; 
         }
 
-        EndDrawing();
+        EndDrawing(); 
     }
 
-    UnloadTexture(background);
-    UnloadFont(font);
-
+    UnloadTexture(background); // Unload the background texture
+    UnloadFont(font); // Unload the font
 }

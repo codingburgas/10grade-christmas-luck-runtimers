@@ -3,4 +3,5 @@
 
 #pragma once
 
+// Function declaration
 void displayStartingScreen();

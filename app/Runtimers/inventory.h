@@ -3,6 +3,7 @@
 
 #pragma once
 
+// Structure to represent an inventory element
 struct inventoryElement {
     string formula;
     Texture2D texture;
@@ -10,7 +11,7 @@ struct inventoryElement {
     Vector2 position;
 };
 
-
+// Function declarations
 void displayInventoryBg();
 void displayShelfInside();
 void displayChembenchZoomed();

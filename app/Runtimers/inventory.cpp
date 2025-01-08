@@ -128,8 +128,6 @@ void displayChembenchZoomed()
 	const int screenWidth = 1920;
 	const int screenHeight = 1080;
 
-	Texture2D background = LoadTexture("../assets/inventory/chembenchZoomed/chembenchZoomed.png");
-
 	inventoryElementsTextures[0] = LoadTexture("../assets/inventory/chembenchZoomed/cards/H2Card.png");
 	inventoryElementsTextures[1] = LoadTexture("../assets/inventory/chembenchZoomed/cards/H2OCard.png");
 	inventoryElementsTextures[2] = LoadTexture("../assets/inventory/chembenchZoomed/cards/O2Card.png");
@@ -142,6 +140,7 @@ void displayChembenchZoomed()
 	inventoryElementsTextures[9] = LoadTexture("../assets/inventory/chembenchZoomed/cards/NaClCard.png");
 	inventoryElementsTextures[10] = LoadTexture("../assets/inventory/chembenchZoomed/cards/HNO3Card.png");
 	inventoryElementsTextures[11] = LoadTexture("../assets/inventory/chembenchZoomed/cards/CaOH2Card.png");
+
 
 	inventoryElementRectangles[0] = { 1378, 35, 110, 100 };
 	inventoryElementRectangles[1] = { 1526, 35, 200, 100 };
@@ -172,7 +171,7 @@ void displayChembenchZoomed()
 	inventoryElements[10] = { "HNO3", inventoryElementsTextures[10], inventoryElementRectangles[10], inventoryElementPositions[10] };
 	inventoryElements[11] = { "Ca(OH)2", inventoryElementsTextures[11], inventoryElementRectangles[11], inventoryElementPositions[11] };
 
-
+	Texture2D background = LoadTexture("../assets/inventory/chembenchZoomed/chembenchZoomed.png");
 	Texture2D testTubeTextureEmpty = LoadTexture("../assets/inventory/chembenchZoomed/testTubes/testTubeEmpty.png");
 	Texture2D testTubeTextureHalfFull = LoadTexture("../assets/inventory/chembenchZoomed/testTubes/testTubeHalfFull.png");
 
@@ -185,10 +184,6 @@ void displayChembenchZoomed()
 	bool tubePhase = false;
 
 	Font font = LoadFont("../font/font.ttf");
-
-	Image logo = LoadImage("../assets/logo/logoTransparent.png");
-
-	SetWindowIcon(logo);
 
 	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
 
@@ -267,6 +262,7 @@ void displayChembenchZoomed()
 								}
 							}
 						}
+
 						else if (tubeElements[0] == 1) // H2O
 						{
 							if (tubeElements[1] == 5) // 
@@ -292,57 +288,57 @@ void displayChembenchZoomed()
 										inventory[hIndex].quantity++; // Add H2 to inventory
 									}
 								}
-							else if (tubeElements[1] == 6) // Na
-							{
-								// Handle H2O + Na reaction to form NaOH
-								int h2oIndex = findElementByName(inventory, "H2O ");
-								int naIndex = findElementByName(inventory, "Na");
-
-								if (h2oIndex != -1 && naIndex != -1)
+								else if (tubeElements[1] == 6) // Na
 								{
-									inventory[h2oIndex].quantity--; // Remove H2O from inventory
-									inventory[naIndex].quantity--; // Remove Na from inventory
+									// Handle H2O + Na reaction to form NaOH
+									int h2oIndex = findElementByName(inventory, "H2O ");
+									int naIndex = findElementByName(inventory, "Na");
 
-									// Add NaOH to inventory
-									int naohIndex = findElementByName(inventory, "NaOH");
-									if (naohIndex != -1)
+									if (h2oIndex != -1 && naIndex != -1)
 									{
-										inventory[naohIndex].quantity += 2;
+										inventory[h2oIndex].quantity--; // Remove H2O from inventory
+										inventory[naIndex].quantity--; // Remove Na from inventory
+
+										// Add NaOH to inventory
+										int naohIndex = findElementByName(inventory, "NaOH");
+										if (naohIndex != -1)
+										{
+											inventory[naohIndex].quantity += 2;
+										}
 									}
 								}
-							}
-							else if (tubeElements[1] == 9) // NaCl
-							{
-								// Handle H2O + NaOH reaction
-								int h2oIndex = findElementByName(inventory, "H2O");
-								int naohIndex = findElementByName(inventory, "NaCl");
+								else if (tubeElements[1] == 9) // NaCl
+								{
+									// Handle H2O + NaOH reaction
+									int h2oIndex = findElementByName(inventory, "H2O");
+									int naohIndex = findElementByName(inventory, "NaCl");
 
-								if (h2oIndex != -1 && naohIndex != -1) {
-									inventory[h2oIndex].quantity--;
-									inventory[naohIndex].quantity--;
+									if (h2oIndex != -1 && naohIndex != -1) {
+										inventory[h2oIndex].quantity--;
+										inventory[naohIndex].quantity--;
 
-									// Add NaCl and NaOH to inventory
-									int naclIndex = findElementByName(inventory, "NaOH");
-									if (naclIndex != -1) 
-									{
-										inventory[naclIndex].quantity++; // Add NaOH to inventory
-									}
+										// Add NaCl and NaOH to inventory
+										int naclIndex = findElementByName(inventory, "NaOH");
+										if (naclIndex != -1)
+										{
+											inventory[naclIndex].quantity++; // Add NaOH to inventory
+										}
 
-									int hclIndex = findElementByName(inventory, "HCl");
-									if (hclIndex != -1) \
-									{
-										inventory[hclIndex].quantity++; // Add HCl to inventory
-									}
+										int hclIndex = findElementByName(inventory, "HCl");
+										if (hclIndex != -1) \
+										{
+											inventory[hclIndex].quantity++; // Add HCl to inventory
+										}
 
-									int clIndex = findElementByName(inventory, "Cl");
-									if (clIndex != -1) 
-									{
-										inventory[clIndex].quantity++; // Add Cl to inventory
+										int clIndex = findElementByName(inventory, "Cl");
+										if (clIndex != -1)
+										{
+											inventory[clIndex].quantity++; // Add Cl to inventory
+										}
 									}
 								}
 							}
 						}
-					}
 						else if (tubeElements[0] == 2) // O2
 						{
 							if (tubeElements[1] == 7) // HCl
@@ -470,7 +466,7 @@ void displayChembenchZoomed()
 								if (hclIndex != -1 && naIndex != -1)
 								{
 									inventory[hclIndex].quantity--;
-									inventory[naIndex].quantity --;
+									inventory[naIndex].quantity--;
 
 									// Add NaCl to inventory
 									int naclIndex = findElementByName(inventory, "NaCl");

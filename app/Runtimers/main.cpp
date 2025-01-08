@@ -4,8 +4,8 @@
 int main() 
 {
 
-	vector<Chemical> inventory = LoadInventoryFromFile("inventory.txt");
+	vector<Chemical> inventory = LoadInventoryFromFile("inventory.txt"); // Load inventory from file
 
-	displayStartingScreen();
+	displayStartingScreen(); // Display the starting screen
 
 }

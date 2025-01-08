@@ -2,6 +2,7 @@
 
 #pragma once
 
+// Structure to represent a chemical
 struct Chemical
 {
 	string name;
@@ -9,6 +10,7 @@ struct Chemical
 	int quantity;
 };
 
+// Function declarations
 bool checkIfFileExists(const string& fileName);
 
 vector<Chemical> LoadInventoryFromFile(const string& fileName);

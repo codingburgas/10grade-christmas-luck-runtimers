@@ -3,6 +3,7 @@
 
 #pragma once
 
+// Function declaration
 void displayHallway();
 
 

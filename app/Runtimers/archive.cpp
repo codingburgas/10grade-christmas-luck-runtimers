@@ -1,11 +1,13 @@
 #include "archive.h"
 
+// Check if a file exists
 bool checkIfFileExists(const string& fileName)
 {
     ifstream file(fileName);
     return file.good();
 }
 
+// Load inventory from a file
 vector<Chemical> LoadInventoryFromFile(const string& fileName) {
     vector<Chemical> inventory;
     ifstream file(fileName);
@@ -25,6 +27,7 @@ vector<Chemical> LoadInventoryFromFile(const string& fileName) {
     return inventory;
 };
 
+// Save inventory to a file
 void saveInventoryFile(const string& fileName, vector<Chemical>& inventory)
 {
     ofstream file(fileName, ios::trunc);
@@ -38,6 +41,7 @@ void saveInventoryFile(const string& fileName, vector<Chemical>& inventory)
     file.close();
 }
 
+// Search inventory for a chemical by formula
 vector<Chemical> searchInventory(const string& query, const vector<Chemical>& inventory) {
     vector<Chemical> result;
     for (const auto& chemical : inventory) {
@@ -50,7 +54,6 @@ vector<Chemical> searchInventory(const string& query, const vector<Chemical>& in
 }
 
 // Function to sort chemicals 
-
 void sortInventory(vector<Chemical>& inventory) 
 {
     sort(inventory.begin(), inventory.end(), [](const Chemical& a, const Chemical& b) 
@@ -59,7 +62,7 @@ void sortInventory(vector<Chemical>& inventory)
      });
 }
 
-
+// Randomly shuffle the inventory
 void randomSortInventory(vector<Chemical>& inventory) {
 
     random_device rd;
@@ -70,16 +73,19 @@ void randomSortInventory(vector<Chemical>& inventory) {
 
 }
 
+// Display the archive screen
 void displayArchive()
 {
-    Font font = LoadFont("../font/font.ttf");
+    Font font = LoadFont("../font/font.ttf"); // Load font
 
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
+    // Position for the buttons
     Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
     Vector2 tabletButtonPosition = { GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 100 };
 
+    // Define the button's rectangles
     const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
     const Rectangle tabletButton = { tabletButtonPosition.x - 50, tabletButtonPosition.y - 100, 400, 200 };
 
@@ -97,7 +103,7 @@ void displayArchive()
 
         DrawTexture(background, 0, 0, RAYWHITE);
 
-        bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
+        // Check if the mouse is over the tablet button
         bool isMouseOverTabletButton = CheckCollisionPointRec(mousePosition, tabletButton);
 
         if (CheckCollisionPointRec(mousePosition, tabletButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -105,7 +111,8 @@ void displayArchive()
             displayTablet();
         }
 
-
+        // Check if the mouse is over the exit button
+        bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
         DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
         if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -121,6 +128,7 @@ void displayArchive()
 
 }
 
+// Default chemical elements
 vector<Chemical> defaultElements = {
     Chemical{"Hydrogen", "H2", 10},
     Chemical{"Oxygen", "O2", 10},
@@ -147,8 +155,9 @@ void displayTablet()
     const int screenWidth = 1920;
     const int screenHeight = 1080;
 
-    Font font = LoadFont("../font/font.ttf");
+    Font font = LoadFont("../font/font.ttf"); // Load font
 
+    // Position for the buttons
     Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
     Vector2 filterButtonPosition = { GetScreenWidth() / 2 + 620, GetScreenHeight() / 2 - 500 };
     Vector2 searchButtonPosition = { GetScreenWidth() / 2 + 80, GetScreenHeight() / 2 - 280 };
@@ -156,6 +165,7 @@ void displayTablet()
     Vector2 closeButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 - 260 };
     Vector2 sortButtonPosition = { GetScreenWidth() / 2 + 730, GetScreenHeight() / 2 + 250 };
 
+    // Define the button's rectangles
     const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
     const Rectangle filterButton = { filterButtonPosition.x + 90, filterButtonPosition.y + 20, 150, 120 };
     const Rectangle searchButton = { searchButtonPosition.x + 90, searchButtonPosition.y + 20, 100, 120 };
@@ -164,9 +174,9 @@ void displayTablet()
     const Rectangle sortButton = { sortButtonPosition.x + 0, sortButtonPosition.y + 20, 150, 70 };
     const Rectangle searchResultsBox = { GetScreenWidth() / 2 + 550, GetScreenHeight() / 2 + 250, 250, 200 }; // Textbox for search results
 
-    Texture2D background = LoadTexture("../assets/archive/tabletInside.png");
+    Texture2D background = LoadTexture("../assets/archive/tabletInside.png"); // Load the background texture
 
-    vector<Chemical> inventory = LoadInventoryFromFile("../data/inventory.txt");
+    vector<Chemical> inventory = LoadInventoryFromFile("../data/inventory.txt"); // Load data
 
     randomSortInventory(inventory); // Randomize inventory initially
 
@@ -355,8 +365,8 @@ void displayTablet()
         EndDrawing();
     }
 
-    UnloadTexture(background);
-    UnloadFont(font);
+    UnloadTexture(background);// Unload the background texture
+    UnloadFont(font); // Unload the font
 
     // Randomize inventory and save to file
     randomSortInventory(inventory);
