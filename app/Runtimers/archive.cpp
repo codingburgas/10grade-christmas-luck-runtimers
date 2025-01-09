@@ -1,5 +1,8 @@
 #include "archive.h"
 
+const int screenWidth = 1920;
+const int screenHeight = 1080;
+
 // Check if a file exists
 bool checkIfFileExists(const string& fileName)
 {
@@ -78,9 +81,6 @@ void displayArchive()
 {
     Font font = LoadFont("../font/font.ttf"); // Load font
 
-    const int screenWidth = 1920;
-    const int screenHeight = 1080;
-
     // Position for the buttons
     Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
     Vector2 tabletButtonPosition = { GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 100 };
@@ -151,9 +151,6 @@ void displayTablet()
     {
         saveInventoryFile("../data/inventory.txt", defaultElements);
     }
-
-    const int screenWidth = 1920;
-    const int screenHeight = 1080;
 
     Font font = LoadFont("../font/font.ttf"); // Load font
 
@@ -366,7 +363,7 @@ void displayTablet()
     }
 
     UnloadTexture(background);// Unload the background texture
-    UnloadFont(font); // Unload the font
+    UnloadFont(font); 
 
     // Randomize inventory and save to file
     randomSortInventory(inventory);

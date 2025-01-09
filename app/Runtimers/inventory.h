@@ -5,10 +5,10 @@
 
 // Structure to represent an inventory element
 struct inventoryElement {
-    string formula;
-    Texture2D texture;
-    Rectangle sourceRect;
-    Vector2 position;
+    string formula = "";
+    Texture2D texture = Texture2D();
+    Rectangle sourceRect = Rectangle();
+    Vector2 position = Vector2();
 };
 
 // Function declarations
