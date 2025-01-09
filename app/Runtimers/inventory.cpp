@@ -1,7 +1,11 @@
 #include "inventory.h"
 
+const int screenWidth = 1920;
+const int screenHeight = 1080;
+
 Texture2D inventoryElementsTextures[12];
 
+// Position for the inventory elements
 Vector2 inventoryElementPositions[12] =
 {
 	{ 450, -400 }, { 615, -400 }, {850, -405},
@@ -19,6 +23,7 @@ Texture2D outOfStockTexture;
 
 int selectedElement = -1;
 
+// Trims leading and trailing whitespace characters from a string
 string trim(const string& str)
 {
 	size_t start = str.find_first_not_of(" \t\n\r");
@@ -27,11 +32,12 @@ string trim(const string& str)
 	return (start == string::npos) ? "" : str.substr(start, end - start + 1);
 }
 
+// Checks if a card is clicked
 void checkCardClick()
 {
 	for (int i = 0; i < 12; i++)
 	{
-
+		// Check if the mouse position is within the source rectangle of an inventory element
 		if (CheckCollisionPointRec({ GetMousePosition().x, GetMousePosition().y }, inventoryElements[i].sourceRect))
 		{
 			selectedElement = i;
@@ -39,37 +45,36 @@ void checkCardClick()
 	}
 }
 
+// Finds an element in the inventory 
 int findElementByName(vector<Chemical>& inventory, const string& formula)
 {
 	for (int i = 0; i < inventory.size(); i++)
 	{
-
+		// Compare the trimmed chemical formula with the given formula
 		if (trim(inventory[i].chemicalFormula) == formula)
 		{
 
-			return i; // Return the index if found
+			return i; 
 		}
 	}
-	return -1; // Return -1 if the element is not found
+	return -1; 
 }
 
 void displayInventoryBg()
 {
-	const int screenWidth = 1920;
-	const int screenHeight = 1080;
+	Font font = LoadFont("../font/font.ttf"); // Load font
 
-	Font font = LoadFont("../font/font.ttf");
-
+	// Position for the buttons
 	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
 	Vector2 shelfButtonPosition = { GetScreenWidth() / 2 + 600, GetScreenHeight() / 2 - 50 };
 	Vector2 chembenchButtonPosition = { GetScreenWidth() / 2 - 550, GetScreenHeight() / 2 };
 
-
+	// Define the button's rectangles
 	const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 70 };
 	const Rectangle shelfButton = { shelfButtonPosition.x , shelfButtonPosition.y , 400, 500 };
 	const Rectangle chembenchButton = { chembenchButtonPosition.x , chembenchButtonPosition.y , 600, 300 };
 
-	Texture2D background = LoadTexture("../assets/inventory/labBackground.png");
+	Texture2D background = LoadTexture("../assets/inventory/labBackground.png"); // Load background texture
 
 	SetTargetFPS(60);
 
@@ -83,6 +88,7 @@ void displayInventoryBg()
 
 		DrawTexture(background, 0, 0, RAYWHITE);
 
+		// Check if the mouse is over the chembench button
 		bool isMouseOverChembenchButton = CheckCollisionPointRec(mousePosition, chembenchButton);
 
 		if (CheckCollisionPointRec(mousePosition, chembenchButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -90,6 +96,7 @@ void displayInventoryBg()
 			displayChembenchZoomed();
 		}
 
+		// Check if the mouse is over the shelf button
 		bool isMouseOverShelfButton = CheckCollisionPointRec(mousePosition, shelfButton);
 
 		if (CheckCollisionPointRec(mousePosition, shelfButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -97,6 +104,7 @@ void displayInventoryBg()
 			displayShelfInside();
 		}
 
+		// Check if the mouse is over the exit button
 		bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 
 		DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 55 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
@@ -113,21 +121,18 @@ void displayInventoryBg()
 	UnloadFont(font);
 
 }
-//
-// 
-////Recursion
-//int calculateTotalQuantity(vector<Chemical>& inventory, int index = 0) {
-//    if (index >= inventory.size()) {
-//        return 0;
-//    }
-//    return inventory[index].quantity + calculateTotalQuantity(inventory, index + 1);
-//}
 
 void displayChembenchZoomed()
 {
-	const int screenWidth = 1920;
-	const int screenHeight = 1080;
+	Font font = LoadFont("../font/font.ttf"); // Load font
 
+	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 }; // Position for the button
+
+	const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 }; // Define the button's rectangle
+
+	Texture2D background = LoadTexture("../assets/inventory/chembenchZoomed/chembenchZoomed.png"); // Load background texture
+
+	//Load textures
 	inventoryElementsTextures[0] = LoadTexture("../assets/inventory/chembenchZoomed/cards/H2Card.png");
 	inventoryElementsTextures[1] = LoadTexture("../assets/inventory/chembenchZoomed/cards/H2OCard.png");
 	inventoryElementsTextures[2] = LoadTexture("../assets/inventory/chembenchZoomed/cards/O2Card.png");
@@ -141,7 +146,7 @@ void displayChembenchZoomed()
 	inventoryElementsTextures[10] = LoadTexture("../assets/inventory/chembenchZoomed/cards/HNO3Card.png");
 	inventoryElementsTextures[11] = LoadTexture("../assets/inventory/chembenchZoomed/cards/CaOH2Card.png");
 
-
+	// Define the textures' rectangles
 	inventoryElementRectangles[0] = { 1378, 35, 110, 100 };
 	inventoryElementRectangles[1] = { 1526, 35, 200, 100 };
 	inventoryElementRectangles[2] = { 1773, 35, 110, 100 };
@@ -155,6 +160,7 @@ void displayChembenchZoomed()
 	inventoryElementRectangles[10] = { 1378, 640, 240, 100 };
 	inventoryElementRectangles[11] = { 1700, 660, 240, 100 };
 
+	//Load warnings textures
 	warningTexture = LoadTexture("../assets/inventory/chembenchZoomed/warning.png");
 	outOfStockTexture = LoadTexture("../assets/inventory/chembenchZoomed/outOfStock.png");
 
@@ -171,11 +177,11 @@ void displayChembenchZoomed()
 	inventoryElements[10] = { "HNO3", inventoryElementsTextures[10], inventoryElementRectangles[10], inventoryElementPositions[10] };
 	inventoryElements[11] = { "Ca(OH)2", inventoryElementsTextures[11], inventoryElementRectangles[11], inventoryElementPositions[11] };
 
-	Texture2D background = LoadTexture("../assets/inventory/chembenchZoomed/chembenchZoomed.png");
+	//Load test tube phases textures
 	Texture2D testTubeTextureEmpty = LoadTexture("../assets/inventory/chembenchZoomed/testTubes/testTubeEmpty.png");
 	Texture2D testTubeTextureHalfFull = LoadTexture("../assets/inventory/chembenchZoomed/testTubes/testTubeHalfFull.png");
 
-	Rectangle testTube = { 550, 840, 200, 170 };
+	Rectangle testTube = { 550, 840, 200, 170 }; // Define the test tube's rectangle
 
 	vector<Chemical> inventory = LoadInventoryFromFile("../data/inventory.txt");
 
@@ -183,19 +189,15 @@ void displayChembenchZoomed()
 
 	bool tubePhase = false;
 
-	Font font = LoadFont("../font/font.ttf");
-
-	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
-
-	const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
+	bool showWarningTexture = false;
+	bool showOutOfStockTexture = false;
 
 	SetTargetFPS(60);
-
-	inventory = LoadInventoryFromFile("../data/inventory.txt");
 
 	while (!WindowShouldClose())
 	{
 		Vector2 mousePosition = GetMousePosition();
+		inventory = LoadInventoryFromFile("../data/inventory.txt");
 
 		BeginDrawing();
 
@@ -206,361 +208,345 @@ void displayChembenchZoomed()
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 		{
 			checkCardClick();
-
-			if (CheckCollisionPointRec(GetMousePosition(), testTube) && selectedElement != -1)
+			if (CheckCollisionPointRec(GetMousePosition(), testTube))
 			{
 				int elementIndex = findElementByName(inventory, inventoryElements[selectedElement].formula);
 
-				if (inventory[elementIndex].quantity != 0)
+				if (inventory[elementIndex].quantity == 0 )
 				{
-					if (!tubePhase)
+					if (tubePhase)
 					{
 						tubeElements[0] = selectedElement;
 					}
-					else
+				}
+				else
+				{
+					tubeElements[1] = selectedElement;
+
+					if (tubeElements[0] == 0) // H2
 					{
-						tubeElements[1] = selectedElement;
-
-						if (tubeElements[0] == 0) // H2
+						if (tubeElements[1] == 2) // O2
 						{
+							// Handle H2 + O2 reaction
+							int h2Index = findElementByName(inventory, "H2");
+							int o2Index = findElementByName(inventory, "O2");
 
-							if (tubeElements[1] == 2) // O2
+							if (h2Index != -1 && o2Index != -1)
 							{
+								inventory[h2Index].quantity -= 2; // Remove H2 from inventory
+								inventory[o2Index].quantity--;    // Remove O2 from inventory
 
-								// Find H2 and O2 in the inventory by name
-								int h2Index = findElementByName(inventory, "H2");
-								int o2Index = findElementByName(inventory, "O2");
-
-								if (h2Index != -1 && o2Index != -1)
-								{
-									inventory[h2Index].quantity -= 2; // Remove H2 from inventory
-									inventory[o2Index].quantity--;    // Remove O2 from inventory
-
-									// Add the resulting H2O
-									int h2oIndex = findElementByName(inventory, "H2O");
-									if (h2oIndex != -1)
-									{
-										inventory[h2oIndex].quantity++; // Add H2O to inventory
-									}
-								}
-							}
-							else if (tubeElements[1] == 3) // Cl2
-							{
-								// Handle H2 + Cl2 reaction to form HCl
-								int h2Index = findElementByName(inventory, "H2 ");
-								int cl2Index = findElementByName(inventory, "Cl2");
-
-								if (h2Index != -1 && cl2Index != -1) {
-									inventory[h2Index].quantity--; // Remove H2 from inventory
-									inventory[cl2Index].quantity--; // Remove Cl2 from inventory
-
-									// Add HCl to inventory
-									int hclIndex = findElementByName(inventory, "HCl");
-									if (hclIndex != -1) {
-										inventory[hclIndex].quantity += 2; // Add HCl to inventory
-									}
-								}
-							}
-						}
-
-						else if (tubeElements[0] == 1) // H2O
-						{
-							if (tubeElements[1] == 5) // 
-							{
-								// Handle H2O + Ca reaction
+								// Add the resulting H2O
 								int h2oIndex = findElementByName(inventory, "H2O");
-								int caIndex = findElementByName(inventory, "Ca");
-
-								if (h2oIndex != -1 && caIndex != -1)
+								if (h2oIndex != -1)
 								{
-									inventory[h2oIndex].quantity -= 2;
-									inventory[caIndex].quantity--;
-
-									// Add Ca(OH)2 and H2 to inventory
-									int caohIndex = findElementByName(inventory, "Ca(OH)2");
-									if (caohIndex != -1)
-									{
-										inventory[caohIndex].quantity++; // Add Ca(OH)2 to inventory
-									}
-
-									int hIndex = findElementByName(inventory, "H2");
-									if (hIndex != -1) {
-										inventory[hIndex].quantity++; // Add H2 to inventory
-									}
-								}
-								else if (tubeElements[1] == 6) // Na
-								{
-									// Handle H2O + Na reaction to form NaOH
-									int h2oIndex = findElementByName(inventory, "H2O ");
-									int naIndex = findElementByName(inventory, "Na");
-
-									if (h2oIndex != -1 && naIndex != -1)
-									{
-										inventory[h2oIndex].quantity--; // Remove H2O from inventory
-										inventory[naIndex].quantity--; // Remove Na from inventory
-
-										// Add NaOH to inventory
-										int naohIndex = findElementByName(inventory, "NaOH");
-										if (naohIndex != -1)
-										{
-											inventory[naohIndex].quantity += 2;
-										}
-									}
-								}
-								else if (tubeElements[1] == 9) // NaCl
-								{
-									// Handle H2O + NaOH reaction
-									int h2oIndex = findElementByName(inventory, "H2O");
-									int naohIndex = findElementByName(inventory, "NaCl");
-
-									if (h2oIndex != -1 && naohIndex != -1) {
-										inventory[h2oIndex].quantity--;
-										inventory[naohIndex].quantity--;
-
-										// Add NaCl and NaOH to inventory
-										int naclIndex = findElementByName(inventory, "NaOH");
-										if (naclIndex != -1)
-										{
-											inventory[naclIndex].quantity++; // Add NaOH to inventory
-										}
-
-										int hclIndex = findElementByName(inventory, "HCl");
-										if (hclIndex != -1) \
-										{
-											inventory[hclIndex].quantity++; // Add HCl to inventory
-										}
-
-										int clIndex = findElementByName(inventory, "Cl");
-										if (clIndex != -1)
-										{
-											inventory[clIndex].quantity++; // Add Cl to inventory
-										}
-									}
+									inventory[h2oIndex].quantity++; 
 								}
 							}
 						}
-						else if (tubeElements[0] == 2) // O2
+						else if (tubeElements[1] == 3) // Cl2
 						{
-							if (tubeElements[1] == 7) // HCl
+							// Handle H2 + Cl2 reaction 
+							int h2Index = findElementByName(inventory, "H2 ");
+							int cl2Index = findElementByName(inventory, "Cl2");
+
+							if (h2Index != -1 && cl2Index != -1)
 							{
-								// Handle O2 + HCl reaction
-								int oIndex = findElementByName(inventory, "O2");
+								inventory[h2Index].quantity--; // Remove H2 from inventory
+								inventory[cl2Index].quantity--; // Remove Cl2 from inventory
+
+								// Add HCl to inventory
 								int hclIndex = findElementByName(inventory, "HCl");
-
-								if (oIndex != -1 && hclIndex != -1)
+								if (hclIndex != -1)
 								{
-									inventory[oIndex].quantity--;
-									inventory[hclIndex].quantity -= 4;
-
-									// Add H2O and Cl2 to inventory
-									int h2oIndex = findElementByName(inventory, "H2O");
-									if (h2oIndex != -1)
-									{
-										inventory[h2oIndex].quantity += 2; // Add H2O to inventory
-									}
-
-									int clIndex = findElementByName(inventory, "Cl2");
-									if (clIndex != -1) {
-										inventory[clIndex].quantity += 2; // Add Cl2 to inventory
-									}
-								}
-
-							}
-						}
-						else if (tubeElements[0] == 3) //Cl2
-						{
-							if (tubeElements[1] == 6) // Na
-							{
-								// Handle Cl2 + Na reaction
-								int clIndex = findElementByName(inventory, "CL2");
-								int naIndex = findElementByName(inventory, "Na");
-
-								if (clIndex != -1 && naIndex != -1)
-								{
-									inventory[clIndex].quantity--;
-									inventory[naIndex].quantity -= 2;
-
-									// Add NaCl to inventory
-									int naclIndex = findElementByName(inventory, "NaCl");
-									if (naclIndex != -1)
-									{
-										inventory[naclIndex].quantity += 2;
-									}
+									inventory[hclIndex].quantity += 2; 
 								}
 							}
 						}
-						else if (tubeElements[0] == 5) //Ca
+					}
+					else if (tubeElements[0] == 1) // H2O
+					{
+						if (tubeElements[1] == 5) // Ca
 						{
-							if (tubeElements[1] == 1) // H2O
+							// Handle H2O + Ca reaction
+							int h2oIndex = findElementByName(inventory, "H2O");
+							int caIndex = findElementByName(inventory, "Ca");
+
+							if (h2oIndex != -1 && caIndex != -1)
 							{
-								// Handle Ca + H2O reaction
-								int caIndex = findElementByName(inventory, "Ca");
+								inventory[h2oIndex].quantity -= 2; // Remove H2O from inventory
+								inventory[caIndex].quantity--; // Remove Ca from inventory
+
+								// Add Ca(OH)2 and H2 to inventory
+								int caohIndex = findElementByName(inventory, "Ca(OH)2");
+								if (caohIndex != -1)
+								{
+									inventory[caohIndex].quantity++; // Add Ca(OH)2 to inventory
+								}
+
+								int hIndex = findElementByName(inventory, "H2");
+								if (hIndex != -1) {
+									inventory[hIndex].quantity++; // Add H2 to inventory
+								}
+							}
+						}
+						else if (tubeElements[1] == 6) // Na
+						{
+							// Handle H2O + Na reaction to form NaOH
+							int h2oIndex = findElementByName(inventory, "H2O ");
+							int naIndex = findElementByName(inventory, "Na");
+
+							if (h2oIndex != -1 && naIndex != -1)
+							{
+								inventory[h2oIndex].quantity--; // Remove H2O from inventory
+								inventory[naIndex].quantity--; // Remove Na from inventory
+
+								// Add NaOH to inventory
+								int naohIndex = findElementByName(inventory, "NaOH");
+								if (naohIndex != -1)
+								{
+									inventory[naohIndex].quantity += 2;
+								}
+							}
+						}
+					}
+					else if (tubeElements[0] == 2) // O2
+					{
+						if (tubeElements[1] == 7) // HCl
+						{
+							// Handle O2 + HCl reaction
+							int oIndex = findElementByName(inventory, "O2");
+							int hclIndex = findElementByName(inventory, "HCl");
+
+							if (oIndex != -1 && hclIndex != -1)
+							{
+								inventory[oIndex].quantity--; // Remove O2 from inventory
+								inventory[hclIndex].quantity -= 4; // Remove HCl from inventory
+
+								// Add H2O and Cl2 to inventory
 								int h2oIndex = findElementByName(inventory, "H2O");
-
-								if (caIndex != -1 && h2oIndex != -1)
+								if (h2oIndex != -1)
 								{
-									inventory[caIndex].quantity--;
-									inventory[h2oIndex].quantity--;
+									inventory[h2oIndex].quantity += 2; // Add H2O to inventory
+								}
 
-									// Add Ca(OH)2 to inventory
-									int caohIndex = findElementByName(inventory, "Ca(OH)2");
-									if (caohIndex != -1)
-									{
-										inventory[caohIndex].quantity++;
-									}
-									// Add H2 to inventory
-									int hlIndex = findElementByName(inventory, "H2");
-									if (hlIndex != -1)
-									{
-										inventory[hlIndex].quantity++;
-									}
+								int clIndex = findElementByName(inventory, "Cl2");
+								if (clIndex != -1) {
+									inventory[clIndex].quantity += 2; // Add Cl2 to inventory
 								}
 							}
+
 						}
-						else if (tubeElements[0] == 6) //Na
+					}
+					else if (tubeElements[0] == 3) //Cl2
+					{
+						if (tubeElements[1] == 6) // Na
 						{
-							if (tubeElements[1] == 1) // H2O
+							// Handle Cl2 + Na reaction
+							int clIndex = findElementByName(inventory, "CL2");
+							int naIndex = findElementByName(inventory, "Na");
+
+							if (clIndex != -1 && naIndex != -1)
 							{
-								// Handle H2O + Na reaction to form NaOH
-								int h2oIndex = findElementByName(inventory, "H2O");
-								int naIndex = findElementByName(inventory, "Na");
+								inventory[clIndex].quantity--; // Remove Cl2 from inventory
+								inventory[naIndex].quantity -= 2; // Remove Na2 from inventory
 
-								if (h2oIndex != -1 && naIndex != -1)
+								// Add NaCl to inventory
+								int naclIndex = findElementByName(inventory, "NaCl");
+								if (naclIndex != -1)
 								{
-									inventory[h2oIndex].quantity--; // Remove H2O from inventory
-									inventory[naIndex].quantity--; // Remove Na from inventory
+									inventory[naclIndex].quantity += 2; 
 
-									// Add NaOH to inventory
-									int naohIndex = findElementByName(inventory, "NaOH");
-									if (naohIndex != -1)
-									{
-										inventory[naohIndex].quantity += 2;
-									}
 								}
 							}
-							else if (tubeElements[1] == 3) // Cl2
+						}
+					}
+					else if (tubeElements[0] == 5) //Ca
+					{
+						if (tubeElements[1] == 1) // H2O
+						{
+							// Handle Ca + H2O reaction
+							int caIndex = findElementByName(inventory, "Ca");
+							int h2oIndex = findElementByName(inventory, "H2O");
+
+							if (caIndex != -1 && h2oIndex != -1)
+							{ 
+								inventory[caIndex].quantity--; // Remove Ca from inventory
+								inventory[h2oIndex].quantity--; // Remove H2O from inventory
+
+								// Add Ca(OH)2 and H2 to inventory
+								int caohIndex = findElementByName(inventory, "Ca(OH)2");
+								if (caohIndex != -1)
+								{
+									inventory[caohIndex].quantity++; // Add Ca(OH)2 to inventory
+								}
+
+								int hlIndex = findElementByName(inventory, "H2");
+								if (hlIndex != -1)
+								{
+									inventory[hlIndex].quantity++; // Add H2 to inventory
+								}
+							}
+						}
+					}
+					else if (tubeElements[0] == 6) //Na
+					{
+						if (tubeElements[1] == 1) // H2O
+						{
+							// Handle H2O + Na reaction to form NaOH
+							int h2oIndex = findElementByName(inventory, "H2O");
+							int naIndex = findElementByName(inventory, "Na");
+
+							if (h2oIndex != -1 && naIndex != -1)
 							{
-								// Handle Cl2 + Na reaction
-								int clIndex = findElementByName(inventory, "CL2");
-								int naIndex = findElementByName(inventory, "Na");
+								inventory[h2oIndex].quantity--; // Remove H2O from inventory
+								inventory[naIndex].quantity--; // Remove Na from inventory
 
-								if (clIndex != -1 && naIndex != -1)
+								// Add NaOH to inventory
+								int naohIndex = findElementByName(inventory, "NaOH");
+								if (naohIndex != -1)
 								{
-									inventory[clIndex].quantity--;
-									inventory[naIndex].quantity -= 2;
-
-									// Add NaCl to inventory
-									int naclIndex = findElementByName(inventory, "NaCl");
-									if (naclIndex != -1)
-									{
-										inventory[naclIndex].quantity += 2;
-									}
+									inventory[naohIndex].quantity += 2;
 								}
 							}
-							else if (tubeElements[1] == 7) // HCl
+						}
+						else if (tubeElements[1] == 3) // Cl2
+						{
+							// Handle Cl2 + Na reaction
+							int clIndex = findElementByName(inventory, "CL2");
+							int naIndex = findElementByName(inventory, "Na");
+
+							if (clIndex != -1 && naIndex != -1)
 							{
-								// Handle HCl + Na reaction
-								int hclIndex = findElementByName(inventory, "HCl");
-								int naIndex = findElementByName(inventory, "Na");
+								inventory[clIndex].quantity--; // Remove Cl2 from inventory
+								inventory[naIndex].quantity -= 2; // Remove Na from inventory
 
-								if (hclIndex != -1 && naIndex != -1)
+								// Add NaCl to inventory
+								int naclIndex = findElementByName(inventory, "NaCl");
+								if (naclIndex != -1)
 								{
-									inventory[hclIndex].quantity--;
-									inventory[naIndex].quantity--;
-
-									// Add NaCl to inventory
-									int naclIndex = findElementByName(inventory, "NaCl");
-									if (naclIndex != -1)
-									{
-										inventory[naclIndex].quantity++;
-									}
-
-									// Add H2 to inventory
-									int hIndex = findElementByName(inventory, "H2");
-									if (hIndex != -1)
-									{
-										inventory[hIndex].quantity++;
-									}
+									inventory[naclIndex].quantity += 2;
 								}
 							}
 						}
-
-						saveInventoryFile("../data/inventory.txt", inventory);
-						tubePhase = !tubePhase;
-
-						selectedElement = -1;
-					}
-
-					Color elementColor = RAYWHITE;
-
-					if (selectedElement != -1)
-					{
-						int elementIndex = findElementByName(inventory, inventoryElements[selectedElement].formula);
-
-						if (inventory[elementIndex].quantity == 1)
+						else if (tubeElements[1] == 7) // HCl
 						{
-							DrawTexture(warningTexture, 100, 100, WHITE);
+							// Handle HCl + Na reaction
+							int hclIndex = findElementByName(inventory, "HCl");
+							int naIndex = findElementByName(inventory, "Na");
+
+							if (hclIndex != -1 && naIndex != -1)
+							{
+								inventory[hclIndex].quantity--; // Remove HCl from inventory
+								inventory[naIndex].quantity--; // Remove Na from inventory
+
+								// Add NaCl and H2 to inventory
+								int naclIndex = findElementByName(inventory, "NaCl");
+								if (naclIndex != -1)
+								{
+									inventory[naclIndex].quantity++; // Add NaCl to inventory
+								}
+
+								int hIndex = findElementByName(inventory, "H2");
+								if (hIndex != -1)
+								{
+									inventory[hIndex].quantity++; // Add H2 to inventory
+								}
+							}
 						}
-						else if (inventory[elementIndex].quantity == 0)
-						{
-							DrawTexture(outOfStockTexture, 100, 100, WHITE);
-						}
 					}
 
-					for (int i = 0; i < 12; i++)
-					{
-						elementColor = RAYWHITE;
+					saveInventoryFile("../data/inventory.txt", inventory);
 
-						if (selectedElement == i)
-						{
-							elementColor = BLUE;
-						}
-
-						DrawTexture(inventoryElements[i].texture, inventoryElements[i].position.x, inventoryElements[i].position.y, elementColor);
-					}
-
-
-					bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
-
-					DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
-
-					if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-					{
-						break;
-					}
-
-					if (tubePhase)
-					{
-						DrawTexture(testTubeTextureHalfFull, 444, 710, WHITE);
-					}
-					else if (!tubePhase)
-					{
-						DrawTexture(testTubeTextureEmpty, 430, 720, WHITE);
-					}
-
-					EndDrawing();
+					tubePhase = !tubePhase;
 				}
 
-				UnloadTexture(background);
-				UnloadFont(font);
+			}
+			if (selectedElement != -1)
+			{
+				int elementIndex = findElementByName(inventory, inventoryElements[selectedElement].formula);
 
-				for (int i = 0; i < 12; i++)
+				if (inventory[elementIndex].quantity == 1)
 				{
-					UnloadTexture(inventoryElementsTextures[i]);
+					showWarningTexture = !showWarningTexture; 
+					showOutOfStockTexture = false; 
+				}
+				else if (inventory[elementIndex].quantity == 0)
+				{
+					showOutOfStockTexture = !showOutOfStockTexture; 
+					showWarningTexture = false; 
+				}
+				else
+				{
+					showWarningTexture = false;
+					showOutOfStockTexture = false;
 				}
 			}
+
 		}
+
+		//Display warnings if needed
+		if (showWarningTexture)
+		{
+			DrawTexture(warningTexture, 950, 50, WHITE);  // Display warning texture
+		}
+		if (showOutOfStockTexture)
+		{
+			DrawTexture(outOfStockTexture, 950, 50, WHITE);  // Display out-of-stock texture
+		}
+
+		// Draw inventory elements
+		Color elementColor = RAYWHITE;
+		for (int i = 0; i < 12; i++)
+		{
+			elementColor = RAYWHITE;
+
+			if (selectedElement == i)
+			{
+				elementColor = BLUE;
+			}
+
+			DrawTexture(inventoryElements[i].texture, inventoryElements[i].position.x, inventoryElements[i].position.y, elementColor);
+		}
+
+		// Handle exit button click
+		bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
+		DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
+		if (CheckCollisionPointRec(mousePosition, exitButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+		{
+			break;
+		}
+
+		// Display test tube based on tubePhase
+		if (tubePhase)
+		{
+			DrawTexture(testTubeTextureHalfFull, -290, 377, WHITE);  
+		}
+		else
+		{
+			DrawTexture(testTubeTextureEmpty, -290 , 370, WHITE);  
+		}
+
+		EndDrawing();
+
+	}
+
+	UnloadTexture(background); // Unload the background texture 
+	UnloadFont(font); // Unload the font
+
+	// Unload textures
+	for (int i = 0; i < 12; i++)
+	{
+		UnloadTexture(inventoryElementsTextures[i]);
 	}
 }
 
 void displayShelfInside()
 {
-	const int screenWidth = 1920;
-	const int screenHeight = 1080;
+	Font font = LoadFont("../font/font.ttf"); // Load font
 
-	Font font = LoadFont("../font/font.ttf");
-
-	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 };
+	// Position for the buttons
+	Vector2 exitButtonPosition = { GetScreenWidth() / 2 + 650, GetScreenHeight() / 2 + 425 }; 
 
 	Vector2 buttonPositions[] =
 	{
@@ -578,6 +564,7 @@ void displayShelfInside()
 		{ GetScreenWidth() / 2 + 300, GetScreenHeight() / 2 + 120 }  // Ca
 	};
 
+	// Define the button's rectangles
 	const Rectangle exitButton = { exitButtonPosition.x + 90, exitButtonPosition.y + 20, 115, 50 };
 
 	const Rectangle buttons[] =
@@ -596,7 +583,9 @@ void displayShelfInside()
 		{ buttonPositions[11].x, buttonPositions[11].y, 130, 150 }
 	};
 
-	Texture2D background = LoadTexture("../assets/inventory/shelfInside.png");
+	Texture2D background = LoadTexture("../assets/inventory/shelfInside.png"); // Load background texture
+
+	//Load reagents
 	Texture2D reagents[] = {
 		LoadTexture("../assets/inventory/info/H2OInfo.png"),
 		LoadTexture("../assets/inventory/info/HClInfo.png"),
@@ -612,6 +601,7 @@ void displayShelfInside()
 		LoadTexture("../assets/inventory/info/CaInfo.png")
 	};
 
+	//Position the reagents
 	Vector2 reagentPositions[] = {
 		{ 55, 110 }, { 265, 100 }, { 495, 100 }, { 730, 100 },
 		{ 70, 260 }, { 250, 260 }, { 485, 260 }, { 740, 260 },
@@ -655,7 +645,7 @@ void displayShelfInside()
 			DrawTexture(reagents[visibleReagentIndex], pos.x, pos.y, RAYWHITE);
 		}
 
-		// Handle exit button
+		// Check if the mouse is over the exit button
 		bool isMouseOverExitButton = CheckCollisionPointRec(mousePosition, exitButton);
 		DrawTextEx(font, "Exit", Vector2{ exitButtonPosition.x + 100, exitButtonPosition.y + 25 }, 50, 10, isMouseOverExitButton ? BLACK : WHITE);
 
@@ -667,10 +657,10 @@ void displayShelfInside()
 		EndDrawing();
 	}
 
-	// Unload resources
-	UnloadTexture(background);
-	UnloadFont(font);
+	UnloadTexture(background); // Unload the background texture
+	UnloadFont(font); // Unload the font
 
+	// Unload textures
 	for (int i = 0; i < 12; i++)
 	{
 		UnloadTexture(reagents[i]);
