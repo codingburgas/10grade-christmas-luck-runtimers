@@ -1,10 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BzKY5FoF)
 <br>
-<br>
 <h1 align="center">🏃‍♂️ RUNTIMERS 🏃‍♂️ </h1>
-<img align="left" src="./app/assets/logo/logoTransparent.png">
-
- 
+<br>
 <p align = "center">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/codingburgas/10grade-christmas-luck-runtimers?style=for-the-badge">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/codingburgas/10grade-christmas-luck-runtimers?style=for-the-badge">
@@ -12,11 +9,14 @@
 <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/codingburgas/10grade-christmas-luck-runtimers?style=for-the-badge">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codingburgas/10grade-christmas-luck-runtimers?style=for-the-badge">
 </p>
+<img align="left" src="./app/assets/logo/logoTransparent.png">
+<br>
 <br>
 <p>👋 Hello, we are RUNTIMERS!</p>
 <p>Empowering safer, more efficient laboratories with the Lab Inventory Tracker. Our mission is to simplify the way lab workers manage their chemicals by offering an intuitive system that allows quick organization and easy tracking of supplies. Instantly find what you need, keep accurate inventory records without the hassle, and automatically update stock levels with every use. With this tool, we aim to enhance lab efficiency, prevent accidents from outdated materials, and ensure a safer, smarter approach to scientific research management.</p>
 <br>
-
+<br>
+<br>
 <h2 align="left">🚀🗂 Languages and Libraries </h2>
 <p align="left">
 <a href="https://www.cplusplus.com/"><img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" alt="C++"></a>
