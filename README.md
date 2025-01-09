@@ -31,7 +31,7 @@
    <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=50px></a>
    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=53px>
    <a href="https://freelogopng.com/image/607"><img src="https://freelogopng.com/images/all_img/1656733637logo-canva-png.png" alt="Canva logo"  width=44px></a>
-   <a href="https://raw.githubusercontent.com/dominickjohn/aseprite-big-sur-icon/main/AsepriteSurIcon.png"><img src="https://raw.githubusercontent.com/dominickjohn/aseprite-big-sur-icon/main/AsepriteSurIcon.png" alt="Aseprite logo"  width=57px></a>
+   <a href="https://www.aseprite.org/download/"><img src="https://raw.githubusercontent.com/dominickjohn/aseprite-big-sur-icon/main/AsepriteSurIcon.png" alt="Aseprite logo" width=57px></a>
  <br>
 
 <h2 align="left">📄📎 Documents</h2><br>
